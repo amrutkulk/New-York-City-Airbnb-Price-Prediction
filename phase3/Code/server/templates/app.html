@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Airbnb Price Prediction</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
+</head>
+
+<body>
+    <video autoplay muted loop id="backgroundVideo">
+        <source src="{{ url_for('static', filename='New York in 8K ULTRA HD - Capital of Earth (60FPS).mp4') }}" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+    <div style="position: absolute;  left: 15%;">
+    <form id="airbnbForm" class="form">
+        <h1>Airbnb Price Prediction</h1>
+        <div>
+            <h2 class="left">Neighborhood Group</h2>
+            <label for="neighborhood" class="right"></label>
+            <select id="neighborhood" name="neighborhood" required>
+                <option value="Manhattan">Manhattan</option>
+                <option value="Brooklyn">Brooklyn</option>
+                <option value="Queens">Queens</option>
+                <option value="Bronx">Bronx</option>
+                <option value="Staten Island">Staten Island</option>
+            </select>
+        </div>
+        <div>
+            <h2 class="left">Bedrooms</h2>
+            <label for="uiBedrooms" class="right"></label>
+            <select id="uiBedrooms" name="uiBedrooms" required>
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div>
+            <h2 class="left">Beds</h2>
+            <label for="uiBeds" class="right"></label>
+            <select id="uiBeds" name="uiBeds" required>
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div>
+            <h2 class="left">Accommodates</h2>
+            <label for="uiAccommodates" class="right"></label>
+            <input class="area" type="text" id="uiAccommodates" class="floatLabel" name="uiAccommodates">
+        </div>
+        <div>
+            <h2 class="left">Room Type</h2>
+            <label for="room_type" class="right"></label>
+            <select id="room_type" name="room_type" required>
+                <option value="Entire home/apt">Entire home/apt</option>
+                <option value="Private room">Private room</option>
+                <option value="Shared room">Shared room</option>
+            </select><br>
+        </div>
+        <div>
+            <h2 class="left">Minimum Nights</h2>
+            <label for="uiMinNight" class="right"></label>
+            <input class="area" type="text" id="uiMinNight" class="floatLabel" name="uiMinNight">
+        </div>
+        <div>
+            <h2 class="left">Availability 365</h2>
+            <label for="av365"></label>
+            <input class="area" type="text" id="av365" class="floatLabel" name="av365" required>
+        </div>
+
+        <button class="submit" onclick="onClickedEstimatePrice()" type="button">Predict Price</button>
+        <button class="dashboard" id="dashboardBtn" style="display:none;" onclick="redirectToDashboard()">Visualize Dashboard</button>
+        <div id="uiEstimatedPrice" class="result">
+            <h2></h2>
+        </div>
+  
+    </form>
+    </div>
+    <!-- Add a dotted line between upload csv file section and other fields -->
+    <hr class="dotted-line">
+
+    <!-- Add a new div for the upload form container -->
+    <div id="uploadFormContainer" style="position: absolute;  right: 15%; transform: translateY(-50%);">
+        <form action="/upload" method="post" enctype="multipart/form-data" class="custom-form">
+            <label for="file"><h2 style="color: white;">Choose a CSV file:</h2></label>
+            <input type="file" name="file" accept=".csv" id="file" required>
+            <button class="submit" type="submit">Submit</button>
+        </form>
+    </div>
+
+</body>
+
+</html>

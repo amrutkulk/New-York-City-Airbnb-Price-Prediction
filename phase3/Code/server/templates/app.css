@@ -1,0 +1,251 @@
+/* Add new style for the upload form container */
+#uploadFormContainer {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Adjust the style of the file input in the upload form */
+.custom-form #file {
+    margin-top: 10px;
+}
+
+/* Add new styles to center the submit button in the upload form */
+.custom-form .submit {
+    margin-top: 10px;
+}
+
+/* Add new style for the upload form button */
+.custom-form button {
+    width: auto; /* Adjust width to fit content */
+}
+
+/* Add new style for the result container to center it */
+.result {
+    margin: 0 auto;
+}
+
+/* Other existing styles remain unchanged */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    /*overflow: hidden; */
+    /* background: url('./nyc.jpg') no-repeat center center fixed;
+    background-size: cover;
+    */
+}
+.custom-form label[for="file"] {
+    cursor: pointer;
+}
+
+
+#backgroundVideo {
+    position: fixed; /* Fixed position to cover the entire viewport */
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* Place the video behind other content */
+    object-fit: cover; /* Ensure the video covers the entire screen */
+}
+.img {
+    backdrop-filter: blur(5px); /* Add blur filter */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: url('./nyc.jpg') no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+
+.form {
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    border-radius: 10px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.form h1,
+.form h2 {
+    width: 100%;
+    text-align: center;
+    color: #fff;
+}
+
+.form div {
+    width: 48%;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.form h2.left,
+.form h2.right {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0 0 0;
+}
+
+.form label {
+    text-align: center;
+    margin: 10px 0 0 0;
+    width: 100%;
+}
+
+.switch-field {
+    width: 100%;
+    position: relative;
+}
+
+.switch-field input,
+.switch-field select,
+.switch-field input[type="text"] {
+    display: none;
+}
+
+.switch-field label,
+.switch-field select,
+.switch-field input[type="text"] {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+    line-height: 1;
+    text-align: center;
+    padding: 8px 16px;
+    margin-right: -1px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+    transition: all 0.1s ease-in-out;
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.switch-field label:hover,
+.switch-field select:hover,
+.switch-field input[type="text"]:hover {
+    cursor: pointer;
+}
+
+.switch-field input:checked+label,
+.switch-field select:checked,
+.switch-field input[type="text"]:focus {
+    background-color: #a5dc86;
+    box-shadow: none;
+}
+
+.switch-field label:first-of-type,
+.switch-field select:first-of-type,
+.switch-field input[type="text"]:first-of-type {
+    border-radius: 4px 0 0 4px;
+}
+
+.switch-field label:last-of-type,
+.switch-field select:last-of-type,
+.switch-field input[type="text"]:last-of-type {
+    border-radius: 0 4px 4px 0;
+}
+
+
+
+/*
+.result {
+    width: 100%;
+    margin: 25px 0 10px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 15px;
+    text-align: center;
+    background-color: #dcd686;
+    border-radius: 5px;
+}
+*/
+
+.result {
+	width: 40%;
+    height: 40%;
+	margin: 0 auto; 
+	padding: 10px;
+	box-sizing: border-box;
+	font-size: 15px;
+	text-align: center;
+	background-color: #dcd686;
+	border-radius: 5px;
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+  }
+
+/* Updated style for the neighborhood group dropdown */
+.form select {
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Updated style for the text input fields */
+.form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.submit {
+    background: #a5dc86;
+    width: 76%;
+    border: 0;
+    margin: 25px auto 10px; /* Auto margin to center horizontally */
+    box-sizing: border-box;
+    font-size: 15px;
+    height: 35px;
+    text-align: center;
+    border-radius: 5px;
+    display: flex; /* Add display flex */
+    align-items: center; /* Vertically align content */
+    justify-content: center; /* Horizontally center content */
+  }
+  
+  
+  .form button {
+    width: 100%;
+    margin: 15px auto 10px; /* Auto margin to center horizontally */
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    display: flex; /* Add display flex */
+    align-items: center; /* Vertically align content */
+    justify-content: center; /* Horizontally center content */
+  }
+  
+  .form button:hover {
+    background-color: #45a049;
+  }
